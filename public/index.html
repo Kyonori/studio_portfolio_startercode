@@ -7,56 +7,100 @@
         3.2 Add CSS and add your site to gh-pages 
 -->
 <!DOCTYPE html>
-<head>   
+
+<head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
 <body>
     <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Richard Eustache's Website</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">About Me</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Photography</a></li>
-    </ul>
-  </div>
-</nav>
-    
-    
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Richard Eustache's Website</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Photography</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
     <div class="container one">
-       <h1>Test</h1>
-        
-    </div>
-    
-    <div class="container two">
-       <h1>Test</h1>
-        
-    </div>
-    
-    <div class="container one">
-       
         <h1>Test</h1>
+
+    </div>
+
+    <div class="container two" id="about-me">
+        <h1>Lets learn some more about me!</h1>
+        <div class="row">
+
+            <div class="col-md-3">
+                <img class="img-circle" id="profile" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/21686337_676952889175601_2610425660342028001_n.jpg?oh=5518415d2cfddfb45b48985ae9c65fb5&oe=5AAC03B9">
+                <div class="row" id="name1">
+                    <h3>Hello my name is Richard Eustache</h3>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <p>Testing Lorem ipsum dolor sit amet, odio noster cu vis, usu minim facilisis philosophia ad. Duo autem vidisse vivendo in. Mucius argumentum scribentur te cum, disputationi definitionem ut eum, his id soleat discere. Est labore corpora
+                    eu, habemus tibique eloquentiam mei in. Postulant definitiones no cum, ut mel veniam ocurreret pertinacia. Ea nec facilis noluisse singulis. Cum cu omnis neglegentur. Per ferri debet disputando no, mea ut errem lucilius accommodare.
+                    Libris noluisse imperdiet eam in, eum offendit appellantur no. Sed brute ludus accusamus ut, suas ocurreret est ei. Ex his discere inciderint, debet tantas graeci ex eum.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container one">
+
+        <h1>Test</h1>
+
     </div>
     <!-- Header -->
-    
+
 
     <!-- Portfolio Grid Section -->
-    
+
 
     <!-- About Section -->
-   
-
-    <!-- Contact Section -->
 
 
-    <!-- Footer -->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+    <script>
+        firebase.initializeApp(config);
+
+        var database = firebase.database();
+        var projects_ref = database.ref('/projects');
+
+        projects_ref.once('value', function(snapshot) {
+            var projects = snapshot.val();
+            console.log(projects);
+        });
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDD3pV6bk663L_x5nPtNC6TnveaKawgXYM",
+            authDomain: "my-first-project-f189a.firebaseapp.com",
+            databaseURL: "https://my-first-project-f189a.firebaseio.com",
+            projectId: "my-first-project-f189a",
+            storageBucket: "my-first-project-f189a.appspot.com",
+            messagingSenderId: "363265234191"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <footer>
+        <p>&copy; Richard Eustache 2016</p>
+    </footer>
+
 </body>
 
 </html>
