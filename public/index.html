@@ -11,6 +11,8 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -55,9 +57,20 @@
 
     <div class="container one">
 
-        <h1>Test</h1>
+        <h1>Some Projects That I have worked on:</h1>
+        <div class="row">
+            <div class="col-md-12">
+
+        
+            <div id="projects" class="row justify-content-center">
+                
+            </div>
+            </div>
+        </div>
 
     </div>
+
+
     <!-- Header -->
 
 
@@ -71,31 +84,13 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-        firebase.initializeApp(config);
-
-        var database = firebase.database();
-        var projects_ref = database.ref('/projects');
-
-        projects_ref.once('value', function(snapshot) {
-            var projects = snapshot.val();
-            console.log(projects);
-        });
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js">
     </script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
     <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDD3pV6bk663L_x5nPtNC6TnveaKawgXYM",
-            authDomain: "my-first-project-f189a.firebaseapp.com",
-            databaseURL: "https://my-first-project-f189a.firebaseio.com",
-            projectId: "my-first-project-f189a",
-            storageBucket: "my-first-project-f189a.appspot.com",
-            messagingSenderId: "363265234191"
-        };
-        firebase.initializeApp(config);
     </script>
     <footer>
         <p>&copy; Richard Eustache 2016</p>
